@@ -7,8 +7,20 @@ import { Typography } from '@mui/material';
 // import { ThemeProvider } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { getDesignTokens } from './theme';
+import { styled } from '@mui/material';
+import { Outlet } from 'react-router-dom';
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+}));
+
 export default function App() {
-  const [mode, setMode] = React.useState('light');
+  const [mode, setMode] = React.useState(Boolean(localStorage.getItem('mode'))?localStorage.getItem('mode'):'light');
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -26,15 +38,13 @@ export default function App() {
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
       
-          <TopBar setMode={setMode} open={open} handleDrawerOpen={handleDrawerOpen}/>
+          <TopBar setMode={setMode}  open={open} handleDrawerOpen={handleDrawerOpen}/>
 
           <SideBar open={open} handleDrawerClose={handleDrawerClose}/>
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <Typography sx={{ marginBottom: 2 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            faucibus et molestie ac.
-          </Typography>
+        <DrawerHeader />
+          <Outlet/>
         </Box>
       </Box>
     </ThemeProvider>

@@ -106,12 +106,22 @@ export default function TopBar({open,handleDrawerOpen,setMode}){
                 <Box flexGrow={1}/>
                 <Stack direction={'row'} >
                     {theme.palette.mode==='light'?
-                    <IconButton onClick={()=>setMode('dark')} color='inherit'>
-                      <DarkModeOutlinedIcon/>
-                      </IconButton>:
-                    <IconButton onClick={()=>setMode('light')} color='inherit'>
+                    <IconButton onClick={()=>{
+                      localStorage.setItem('mode',theme.palette.mode==='light'?'dark':'light')
+                       setMode((prevMode) =>
+                          prevMode === 'light' ? 'dark' : 'light',
+                        );
+                        }}   color='inherit'>
                       <LightModeOutlinedIcon/>
-                      </IconButton>
+                    </IconButton>:
+                    <IconButton onClick={()=>{
+                      localStorage.setItem('mode',theme.palette.mode==='dark'?'light':'dark')
+                       setMode((prevMode) =>
+                        prevMode === 'light' ? 'dark' : 'light',
+                      );
+                       }}  color='inherit'>
+                      <DarkModeOutlinedIcon/>
+                    </IconButton>
                     }
 
                     <IconButton color='inherit'>

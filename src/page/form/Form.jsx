@@ -30,8 +30,10 @@ export default function Form() {
     register,
     handleSubmit,
     watch,
+    setError,
     formState: { errors },
   } = useForm();
+  console.log(useForm())
 
   const [open, setOpen] = useState(false);
   const handleClose = (event, reason) => {

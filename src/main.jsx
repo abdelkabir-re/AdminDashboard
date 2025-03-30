@@ -31,9 +31,9 @@ const router = createBrowserRouter(
       <Route path="invoices" element={<Invoices />} />
       <Route path="form" element={<Form />} />
       <Route path="calender" element={<Calender/>} />
-      {/*<Route path="faq" element={<Faq />} />
+      <Route path="faq" element={<Faq />} />
       <Route path="bar" element={<BarChart />} />
-      <Route path="pie" element={<PieChart />} />
+      {/*<Route path="pie" element={<PieChart />} />
       <Route path="line" element={<LineChart />} />
       <Route path="geography" element={<Geography />} /> */}
     </Route>

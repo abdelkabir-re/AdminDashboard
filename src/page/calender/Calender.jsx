@@ -7,7 +7,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { Paper, Stack, useTheme } from "@mui/material";
 import './Calender.css';
 
-export default function DemoApp() {
+export default function Calender() {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
   const [currentEvents, setCurrentEvents] = useState([]);
 

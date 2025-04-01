@@ -1,7 +1,7 @@
-export default function LineChart(){
-    return(
-        <div>
-            LineChart page
-        </div>
-    )
+import Line from "./Line";
+export default function LineChart() {
+  return (
+    <Line/>
+   
+  );
 }

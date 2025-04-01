@@ -34,9 +34,10 @@ const router = createBrowserRouter(
       <Route path="faq" element={<Faq />} />
       <Route path="bar" element={<BarChart />} />
       <Route path="pie" element={<PieChart />} />
-        {/*<Route path="line" element={<LineChart />} />
-      <Route path="geography" element={<Geography />} /> */}
+      <Route path="line" element={<LineChart />} />
+      <Route path="geography" element={<Geography />} /> 
     </Route>
+   
   )
 )
 
